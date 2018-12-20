@@ -17,7 +17,7 @@ TEST('EventBus',
         CHECK_ACTUAL_EQUAL_EXPECTED(actualQuantityListeners, expectedQuantityListeners);
     }),
      
-    TEST_F('TestOnceCheckEvents', () => {
+    TEST_F('TestOnceCheckListenerCountOfEvent', () => {
         const eventBus = new EventBus();
     
         const expectedQuantityListeners = 1;
@@ -28,5 +28,19 @@ TEST('EventBus',
         
         CHECK_ACTUAL_EQUAL_EXPECTED(actualQuantityListeners, expectedQuantityListeners);
     }),
+     
+    TEST_F('TestOnCheckListenerCountOfEvent', () => {
+        const eventBus = new EventBus();
+    
+        const expectedQuantityListeners = 1;
+    
+        eventBus.on('event1', function() {});
+    
+        const actualQuantityListeners = eventBus.getListenerCountOfEvent('event1');
+        
+        CHECK_ACTUAL_EQUAL_EXPECTED(actualQuantityListeners, expectedQuantityListeners);
+    }),
+     
+
      
 );
