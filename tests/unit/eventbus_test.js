@@ -215,7 +215,21 @@ TEST('EventBus',
         
         const actualListenersLength = eventBus.getAllListenersOfEvent('event1').length;
         
-        CHECK_ACTUAL_EQUAL_EXPECTED_OBJECT(actualListenersLength, expectedListenersLength);
+        CHECK_ACTUAL_EQUAL_EXPECTED(actualListenersLength, expectedListenersLength);
     }),
+     
+    TEST_F('TestRemoveAllListenersOfEventCheckGetAllListenersOfEventReturnUndefined', () => {
+        const eventBus = new EventBus();
+        
+        eventBus.on('event1', function() {});
+        eventBus.once('event1', function() {});
+        eventBus.on('event1', function() {});
+    
+        eventBus.removeAllListenersOfEvent('event1');
+    
+        const actualQuantityListeners = eventBus.getAllListenersOfEvent('event1');
+
+        CHECK_UNDEFINED(actualQuantityListeners);
+    })
      
 );
