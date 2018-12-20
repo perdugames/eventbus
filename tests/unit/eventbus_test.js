@@ -120,6 +120,76 @@ TEST('EventBus',
         CHECK_ACTUAL_EQUAL_EXPECTED(actualSumXY, expectedSumXY);
     }),
      
+    TEST_F('TestEventAddListenerOnCheckChangeMockObjInListenerFunction', () => {
+        const eventBus = new EventBus();
+        const mockX = {x: 0};
     
+        const expectedX = mockX.x + 1;
+    
+        eventBus.on('addListener', function() { mockX.x++; });
+        eventBus.on('event1', function() {});
+    
+        const actualX = mockX.x;
+
+        CHECK_ACTUAL_EQUAL_EXPECTED(actualX, expectedX);
+    }),
+     
+    TEST_F('TestEventAddListenerOnCheckEventName', () => {
+        const eventBus = new EventBus();
+        let eventName = '';
+    
+        const expectedEventName = 'event1';
+    
+        eventBus.on('addListener', function(_eventName) { eventName = _eventName; });
+        eventBus.on('event1', function() {});
+
+        const actualEventName = eventName;
+
+        CHECK_ACTUAL_EQUAL_EXPECTED(actualEventName, expectedEventName);
+    }),
+     
+    TEST_F('TestEventAddListenerOnceCheckChangeMockObjInListenerFunction', () => {
+        const eventBus = new EventBus();
+        const mockX = {x: 0};
+    
+        const expectedX = mockX.x + 1;
+    
+        eventBus.once('addListener', function() { mockX.x++; });
+        eventBus.on('event1', function() {});
+        eventBus.on('event1', function() {});
+    
+        const actualX = mockX.x;
+
+        CHECK_ACTUAL_EQUAL_EXPECTED(actualX, expectedX);
+    }),
+     
+    TEST_F('TestEventAddListenerOnceAndEvent1OnceCheckChangeMockObjInListenerFunction', () => {
+        const eventBus = new EventBus();
+        const mockX = {x: 0};
+    
+        const expectedX = mockX.x + 1;
+    
+        eventBus.once('addListener', function() { mockX.x++; });
+        eventBus.once('event1', function() {});
+    
+        const actualX = mockX.x;
+
+        CHECK_ACTUAL_EQUAL_EXPECTED(actualX, expectedX);
+    }),
+    
+    TEST_F('TestEventRemoveListenerOnCheckChangeMockObjInListenerFunction', () => {
+        const eventBus = new EventBus();
+        const mockX = {x: 0};
+    
+        const expectedX = mockX.x + 1;
+    
+        eventBus.on('removeListener', function() { mockX.x++; });
+        eventBus.on('event1', function() {});
+        eventBus.off('event1', function() {});
+    
+        const actualX = mockX.x;
+
+        CHECK_ACTUAL_EQUAL_EXPECTED(actualX, expectedX);
+    }),
      
 );
