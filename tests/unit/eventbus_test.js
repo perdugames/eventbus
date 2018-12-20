@@ -205,4 +205,17 @@ TEST('EventBus',
         CHECK_ACTUAL_EQUAL_EXPECTED_OBJECT(actualArrayNames, expectedArrayNames);
     }),
      
+    TEST_F('TestGetAllListenersOfEventCheckArrayListenersLength', () => {
+        const eventBus = new EventBus();
+    
+        const expectedListenersLength = 2;
+    
+        eventBus.on('event1', function() {});
+        eventBus.on('event1', function() {});
+        
+        const actualListenersLength = eventBus.getAllListenersOfEvent('event1').length;
+        
+        CHECK_ACTUAL_EQUAL_EXPECTED_OBJECT(actualListenersLength, expectedListenersLength);
+    }),
+     
 );
