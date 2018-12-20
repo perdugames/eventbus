@@ -192,4 +192,17 @@ TEST('EventBus',
         CHECK_ACTUAL_EQUAL_EXPECTED(actualX, expectedX);
     }),
      
+    TEST_F('TestGetAllEventsNameCheckArrayNames', () => {
+        const eventBus = new EventBus();
+    
+        const expectedArrayNames = ['event1', 'event2'];
+    
+        eventBus.on('event1', function() {});
+        eventBus.on('event2', function() {});
+        
+        const actualArrayNames = eventBus.getAllEventsName();
+        
+        CHECK_ACTUAL_EQUAL_EXPECTED_OBJECT(actualArrayNames, expectedArrayNames);
+    }),
+     
 );
