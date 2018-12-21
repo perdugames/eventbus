@@ -4,9 +4,11 @@ function WindSystem(name, eventBus) {
 }
 
 WindSystem.prototype.init = function() {
-    
-}
-
-WindSystem.prototype.update = function() {
-    
+    const intensities = ['Very', 'Little', 'Too Much'];
+   
+    const keyCodeEnter = 13;
+    addEventKeypress(keyCodeEnter, () => {
+        const intensity = Math.floor(Math.random() * intensities.length); 
+        eventBus.emit('startedWind', intensities[intensity]);
+    });
 }
