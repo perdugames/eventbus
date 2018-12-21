@@ -5,11 +5,11 @@ module.exports = {
     entry: "./index.js",
         output: {
         path: path.resolve(__dirname, "build/"),
-        filename: "<DEFAULT>.js",
+        filename: "eventbus.js",
         libraryTarget: 'umd',
         globalObject: 'this',
         libraryExport: 'default',
-        library: '<DEFAULT>'
+        library: 'EventBus'
     },
     module: {
         rules: [
