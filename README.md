@@ -9,7 +9,7 @@ import EventBus from './eventbus-1.0.0.js';
 
 const eventBus = new EventBus();
 
-// Use "once" for when you want to perform the listener function only once.
+/* Use "once" for when you want to perform the listener function only once. */
 eventBus.once('event1', function(text) {
     console.log(text);
 });
@@ -21,8 +21,7 @@ eventBus.emit('event1', 'I exist?');
 //      I exist?
 
 
-
-// Use "on" for when you want to perform the listener function multiple times.
+/* Use "on" for when you want to perform the listener function multiple times. */
 eventBus.on('event1', function(text) {
     console.log(text);
 });
