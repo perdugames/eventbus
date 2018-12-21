@@ -1,22 +1,23 @@
 {
   "name": "EventBus",
   "version": "1.0.0",
-  "description": "Event Bus.",
+  "description": "Event Bus API for JavaScript.",
   "main": "index.js",
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
-    "test": "webpack --mode development --watch --config webpack.config.test.js"
+    "test": "webpack --mode development --watch --config webpack.config.test.js",
+    "postversion": "git push --tags origin master"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/perdugames/<DEFAULT>.git"
+    "url": "git+https://github.com/perdugames/eventbus.git"
   },
   "author": "perdugames",
   "license": "GPL-3.0",
   "bugs": {
-    "url": "https://github.com/perdugames/<DEFAULT>/issues"
+    "url": "https://github.com/perdugames/eventbus/issues"
   },
-  "homepage": "https://github.com/perdugames/<DEFAULT>#readme",
+  "homepage": "https://github.com/perdugames/eventbus#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-core": "^6.26.3",
