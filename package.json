@@ -1,5 +1,5 @@
 {
-  "name": "eventbus",
+  "name": "@perdugames/eventbus",
   "readmeFilename": "README.md",
   "version": "1.0.0",
   "description": "Event Bus API for JavaScript.",
