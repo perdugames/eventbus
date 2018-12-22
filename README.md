@@ -1,14 +1,22 @@
 # EventBus
 ## EventBus API in JavaScript.
 
+### How to install EventBus
+
+For npm: 
+
+npm i @perdugames/eventbus
+
+For browsers: 
+
+https://unpkg.com/@perdugames/eventbus@<version>/build/eventbus-<version>.js
+
 ### How to use EventBus
 
 ```javascript
 
 // 'import EventBus from '@perdugames/eventbus.js';' only with Babel, 
 // without Babel use 'const EventBus = require('@perdugames/eventbus.js');'
-import EventBus from '@perdugames/eventbus.js';
-
 const eventBus = new EventBus();
 
 /* Use "once" for when you want to perform the listener function only once. */
