@@ -5,11 +5,15 @@
 
 For npm: 
 
+```
 npm i @perdugames/eventbus
+```
 
 For browsers: 
 
-https://unpkg.com/@perdugames/eventbus@<version>/build/eventbus-<version>.js
+```
+https://unpkg.com/@perdugames/eventbus@VERSION/build/eventbus-VERSION.js
+```
 
 ### How to use EventBus
 
