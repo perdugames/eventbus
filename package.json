@@ -3,7 +3,7 @@
   "readmeFilename": "README.md",
   "version": "1.0.0",
   "description": "Event Bus API for JavaScript.",
-  "main": "index.js",
+  "main": "build/eventbus-1.0.0.js",
   "keywords": [
     "eventbus",
     "event",

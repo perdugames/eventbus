@@ -5,7 +5,9 @@
 
 ```javascript
 
-import EventBus from './eventbus-1.0.0.js';
+// 'import EventBus from '@perdugames/eventbus.js';' only with Babel, 
+// without Babel use 'const EventBus = require('@perdugames/eventbus.js');'
+import EventBus from '@perdugames/eventbus.js';
 
 const eventBus = new EventBus();
 
