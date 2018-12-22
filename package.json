@@ -1,8 +1,17 @@
 {
-  "name": "EventBus",
+  "name": "eventbus",
+  "readmeFilename": "README.md",
   "version": "1.0.0",
   "description": "Event Bus API for JavaScript.",
   "main": "index.js",
+  "keywords": [
+    "eventbus",
+    "event",
+    "event-emitter"
+  ],
+    "tags": [
+    "eventbus"
+  ],
   "scripts": {
     "build": "webpack --config webpack.config.prod.js",
     "test": "webpack --mode development --watch --config webpack.config.test.js",
@@ -25,5 +34,8 @@
     "babel-preset-env": "^1.7.0",
     "webpack": "^4.16.1",
     "webpack-cli": "^3.0.8"
+  },
+  "dependencies": {
+    "user": "0.0.0"
   }
 }
