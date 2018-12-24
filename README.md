@@ -21,6 +21,8 @@ https://unpkg.com/@perdugames/eventbus@VERSION/build/eventbus-VERSION.js
 
 // 'import EventBus from '@perdugames/eventbus.js';' only with Babel, 
 // without Babel use 'const EventBus = require('@perdugames/eventbus.js');'
+import EventBus from '@perdugames/eventbus.js
+
 const eventBus = new EventBus();
 
 /* Use "once" for when you want to perform the listener function only once. */
